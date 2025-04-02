@@ -1,10 +1,10 @@
-package com.tulaysahinduran.ibb_ecodation_javafx.dto;
+package com.tulaysahinduran.ibb_ecodation_javafx.utils;
 /**
  * 📌 Kullanıcı Rollerini Tanımlayan Enum
  */
 public enum ERole {
-    STUDENT("Öğrenci"),
-    TEACHER("Öğretmen"),
+    USER("Kullanıcı"),
+    MODERATOR("Moderatör"),
     ADMIN("Yönetici");
 
     // Field
@@ -28,5 +28,9 @@ public enum ERole {
         } catch (IllegalArgumentException e) {
             throw new RuntimeException("❌ Geçersiz rol: " + role);
         }
+    }
+    @Override
+    public String toString() {
+        return description; // ComboBox’ta görünen metin
     }
 }
